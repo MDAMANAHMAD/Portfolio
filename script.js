@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // Force scroll to top on load/reload
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    
     // ==========================================
     // 1. TYPING TEXT EFFECT
     // ==========================================
