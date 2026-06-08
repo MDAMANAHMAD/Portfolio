@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MD Aman Ahmad - Full Stack MERN Developer, Java Developer, and IoT Enthusiast. Portfolio showcasing scalable web applications, real-time architectures, and cloud databases.">
+    <meta name="keywords" content="MD Aman Ahmad, Aman Ahmad, Portfolio, MERN Stack, Full Stack Developer, Node.js, Express.js, React, MongoDB, Java DSA, IoT, LTCE, Kalyan">
+    <meta name="author" content="MD Aman Ahmad">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MD Aman Ahmad | Full Stack Developer & MERN Specialist">
+    <meta property="og:description" content="Solutions-driven Computer Engineering Graduate from LTCE with expertise in Java, MERN stack, and IoT systems.">
+    <meta property="og:image" content="assets/images/chatpilot_preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="MD Aman Ahmad | Full Stack Developer & MERN Specialist">
+    <meta property="twitter:description" content="Solutions-driven Computer Engineering Graduate from LTCE with expertise in Java, MERN stack, and IoT systems.">
+
+    <title>MD Aman Ahmad | Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Interactive Background Canvas -->
+    <canvas id="particles-canvas"></canvas>
+    
+    <!-- Ambient Blur Background Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+    <div class="bg-blob blob-3"></div>
+
+    <!-- Custom Cursor Glow -->
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <!-- Floating Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>Aman<span class="logo-bracket">/&gt;</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="#terminal-section" class="nav-link">Terminal</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-tag" data-reveal="bottom">Available for Opportunities</div>
+                <h1 class="hero-title" data-reveal="bottom" data-delay="100">
+                    Hi, I'm <span class="gradient-text">MD Aman Ahmad</span>
+                </h1>
+                <h2 class="hero-subtitle" data-reveal="bottom" data-delay="200">
+                    Building <span class="typing-text"></span>
+                </h2>
+                <p class="hero-description" data-reveal="bottom" data-delay="300">
+                    Solutions-driven Computer Engineering Graduate specializing in scalable <strong>MERN Stack</strong> applications, robust API architectures, and intelligent IoT integrations.
+                </p>
+                <div class="hero-buttons" data-reveal="bottom" data-delay="400">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fa-solid fa-code"></i> View Projects
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fa-regular fa-envelope"></i> Contact Me
+                    </a>
+                </div>
+                <div class="social-links" data-reveal="bottom" data-delay="500">
+                    <a href="https://github.com/MDAMANAHMAD" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/md-aman-ahmad/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:mdamanahmad0406@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    <a href="tel:+918693081506" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+                </div>
+            </div>
+            <div class="hero-visual" data-reveal="zoom" data-delay="200">
+                <div class="tech-ring">
+                    <div class="tech-icon nodejs"><i class="fa-brands fa-node-js"></i></div>
+                    <div class="tech-icon react"><i class="fa-brands fa-react"></i></div>
+                    <div class="tech-icon mongodb"><i class="fa-solid fa-database"></i></div>
+                    <div class="tech-icon java"><i class="fa-brands fa-java"></i></div>
+                    <div class="tech-icon git"><i class="fa-brands fa-git-alt"></i></div>
+                    <div class="visual-core">
+                        <span class="core-text">MERN</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-down">
+                <span>Scroll Down</span>
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title"><span class="number">01.</span> About Me</h2>
+            <div class="about-grid">
+                <div class="about-text" data-reveal="left">
+                    <p class="lead">
+                        I am a Computer Engineering graduate from <strong>Lokmanya Tilak College of Engineering (LTCE)</strong>, driven by a passion for transforming complex logic into elegant web solutions.
+                    </p>
+                    <p>
+                        My journey involves building scalable full-stack applications with the MERN Stack, configuring cloud databases, designing real-time infrastructures via WebSockets, and integrating AI services like the Google Gemini API.
+                    </p>
+                    <p>
+                        I also hold leadership roles like being the <strong>Vice President of the LTCE Coding Club</strong>, where I enjoy running workshops, mentoring peers in technologies like Raspberry Pi, and organizing tech competitions.
+                    </p>
+                    
+                    <div class="education-block">
+                        <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+                        <div class="edu-item">
+                            <div class="edu-header">
+                                <h4>Bachelor of Computer Engineering</h4>
+                                <span class="edu-date">2022 - 2026</span>
+                            </div>
+                            <p class="edu-location">Lokmanya Tilak College of Engineering</p>
+                            <p class="edu-meta">CGPI: <strong>7.93</strong> (Completed)</p>
+                        </div>
+                        <div class="edu-item">
+                            <div class="edu-header">
+                                <h4>12th HSC (Science)</h4>
+                                <span class="edu-date">2021 - 2022</span>
+                            </div>
+                            <p class="edu-location">Central Railway High School and Jr. College, Kalyan</p>
+                            <p class="edu-meta">Percentage: <strong>76.6%</strong></p>
+                        </div>
+                        <div class="edu-item">
+                            <div class="edu-header">
+                                <h4>10th SSC</h4>
+                                <span class="edu-date">2019 - 2020</span>
+                            </div>
+                            <p class="edu-location">All Saints High School, Bhiwandi</p>
+                            <p class="edu-meta">Percentage: <strong>83.6%</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-skills-radar" data-reveal="right">
+                    <div class="glass-panel soft-skills-card">
+                        <h3><i class="fa-solid fa-users"></i> Soft Skills & Leadership</h3>
+                        <div class="soft-skills-list">
+                            <div class="soft-skill-item">
+                                <div class="skill-info">
+                                    <span>Teamwork & Leadership</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" style="width: 95%"></div>
+                                </div>
+                            </div>
+                            <div class="soft-skill-item">
+                                <div class="skill-info">
+                                    <span>Communication & Public Speaking</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <div class="soft-skill-item">
+                                <div class="skill-info">
+                                    <span>Problem Solving (DSA)</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" style="width: 92%"></div>
+                                </div>
+                            </div>
+                            <div class="soft-skill-item">
+                                <div class="skill-info">
+                                    <span>Creativity & Innovation</span>
+                                    <span>88%</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" style="width: 88%"></div>
+                                </div>
+                            </div>
+                            <div class="soft-skill-item">
+                                <div class="skill-info">
+                                    <span>Decision Making</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" style="width: 85%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <h2 class="section-title"><span class="number">02.</span> Technical Expertise</h2>
+            <p class="section-desc">
+                Click on any skill to highlight projects and professional experiences where I utilized that specific technology.
+            </p>
+            <div class="skills-filters">
+                <button class="skill-filter-btn active" data-filter="all">All Skills</button>
+                <button class="skill-filter-btn" data-filter="languages">Languages</button>
+                <button class="skill-filter-btn" data-filter="frontend">Frontend</button>
+                <button class="skill-filter-btn" data-filter="backend">Backend & DB</button>
+                <button class="skill-filter-btn" data-filter="tools">Workflows & IoT</button>
+            </div>
+            
+            <div class="skills-grid" data-reveal="bottom">
+                <!-- Languages -->
+                <div class="skill-card" data-category="languages" data-skill="java">
+                    <div class="skill-icon"><i class="fa-brands fa-java"></i></div>
+                    <h3>Java</h3>
+                    <p>Data Structures & Algorithms</p>
+                </div>
+                <div class="skill-card" data-category="languages" data-skill="javascript">
+                    <div class="skill-icon"><i class="fa-brands fa-square-js"></i></div>
+                    <h3>JavaScript</h3>
+                    <p>Modern ES6+, Asynchronous Logic</p>
+                </div>
+                
+                <!-- Frontend -->
+                <div class="skill-card" data-category="frontend" data-skill="react">
+                    <div class="skill-icon"><i class="fa-brands fa-react"></i></div>
+                    <h3>React</h3>
+                    <p>Component State Management</p>
+                </div>
+                <div class="skill-card" data-category="frontend" data-skill="html">
+                    <div class="skill-icon"><i class="fa-html5 fa-brands"></i></div>
+                    <h3>HTML5 / CSS3</h3>
+                    <p>Semantic Layout & Design</p>
+                </div>
+                <div class="skill-card" data-category="frontend" data-skill="tailwind">
+                    <div class="skill-icon"><i class="fa-solid fa-wind"></i></div>
+                    <h3>Tailwind CSS</h3>
+                    <p>Responsive, Utility-First Styling</p>
+                </div>
+                
+                <!-- Backend & DB -->
+                <div class="skill-card" data-category="backend" data-skill="node">
+                    <div class="skill-icon"><i class="fa-brands fa-node-js"></i></div>
+                    <h3>Node.js</h3>
+                    <p>Event-Driven Backends</p>
+                </div>
+                <div class="skill-card" data-category="backend" data-skill="express">
+                    <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+                    <h3>Express.js</h3>
+                    <p>Restful Middleware & Routing</p>
+                </div>
+                <div class="skill-card" data-category="backend" data-skill="mongodb">
+                    <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+                    <h3>MongoDB</h3>
+                    <p>NoSQL Aggregations & Cloud Atlas</p>
+                </div>
+                <div class="skill-card" data-category="backend" data-skill="mysql">
+                    <div class="skill-icon"><i class="fa-solid fa-table"></i></div>
+                    <h3>MySQL</h3>
+                    <p>Relational Database Queries</p>
+                </div>
+                <div class="skill-card" data-category="backend" data-skill="socketio">
+                    <div class="skill-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Socket.io</h3>
+                    <p>Real-time bidirectional logic</p>
+                </div>
+                
+                <!-- Tools & Workflows -->
+                <div class="skill-card" data-category="tools" data-skill="git">
+                    <div class="skill-icon"><i class="fa-brands fa-git-alt"></i></div>
+                    <h3>Git & GitHub</h3>
+                    <p>Version Control & CI/CD workflows</p>
+                </div>
+                <div class="skill-card" data-category="tools" data-skill="cloud">
+                    <div class="skill-icon"><i class="fa-solid fa-cloud"></i></div>
+                    <h3>GCP & Cloud Host</h3>
+                    <p>Google Cloud, Vercel, Render, Netlify</p>
+                </div>
+                <div class="skill-card" data-category="tools" data-skill="gemini">
+                    <div class="skill-icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Gemini API</h3>
+                    <p>AI integrations & smart suggestions</p>
+                </div>
+                <div class="skill-card" data-category="tools" data-skill="iot">
+                    <div class="skill-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>IoT & C++</h3>
+                    <p>Embedded systems, ESP32, Sensors</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience / Timeline Section -->
+        <section id="experience" class="section">
+            <h2 class="section-title"><span class="number">03.</span> Work Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-bar"></div>
+                
+                <!-- Internship 1 -->
+                <div class="timeline-item" data-skills="javascript node express mongodb" data-reveal="left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Jan 2026 - Present</div>
+                    <div class="glass-panel timeline-card">
+                        <span class="badge">Internship</span>
+                        <h3>Full Stack Developer</h3>
+                        <h4 class="company">Hari Om Thalassic Pvt. Ltd.</h4>
+                        <ul class="timeline-bullets">
+                            <li>Developed the "Externship" mobile application utilizing Flutter for frontend interfaces and Node.js/Express.js for backend services.</li>
+                            <li>Implemented a highly scalable MongoDB architecture to facilitate efficient data storage and seamless client-server synchronization.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Coding Club Role -->
+                <div class="timeline-item" data-skills="java javascript iot" data-reveal="right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Feb 2025 - Sept 2025</div>
+                    <div class="glass-panel timeline-card">
+                        <span class="badge leadership">Leadership</span>
+                        <h3>Vice President</h3>
+                        <h4 class="company">Coding Club, LTCE</h4>
+                        <ul class="timeline-bullets">
+                            <li>Conducted technical workshops and seminars on Machine Learning fundamentals for first-year engineering students.</li>
+                            <li>Managed and mentored students during a hands-on Raspberry Pi workshop at college.</li>
+                            <li>Coordinated, structured, and organized the college's flagship Innovetex Project Competition.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Internship 2 -->
+                <div class="timeline-item" data-skills="mongodb cloud git" data-reveal="left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">June 2024 (1 Month)</div>
+                    <div class="glass-panel timeline-card">
+                        <span class="badge">Internship</span>
+                        <h3>Cloud Intern</h3>
+                        <h4 class="company">iFuture Technologies Pvt. Ltd.</h4>
+                        <ul class="timeline-bullets">
+                            <li>Gained hands-on experience in Google Cloud Console including Google APIs (GPS), and managing cloud databases via MongoDB Atlas.</li>
+                            <li>Mastered the deployment, hosting, and pipeline setup of full-stack MERN applications on Vercel, Render, and Netlify.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title"><span class="number">04.</span> Projects Built</h2>
+            
+            <div class="projects-grid">
+                <!-- ChatPilot -->
+                <div class="project-card" data-skills="react node express mongodb socketio gemini html css" data-reveal="bottom">
+                    <div class="project-img-wrapper">
+                        <img src="assets/images/chatpilot_preview.png" alt="ChatPilot App Preview" class="project-img">
+                        <div class="project-links-overlay">
+                            <a href="https://chatpilot.vercel.app" target="_blank" class="project-icon-link" aria-label="Live Demo"><i class="fa-solid fa-up-right-from-square"></i></a>
+                            <a href="https://github.com/MDAMANAHMAD" target="_blank" class="project-icon-link" aria-label="Source Code"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-label">AI Chat Application</span>
+                        <h3>ChatPilot</h3>
+                        <p class="project-description">
+                            Developed a full-stack MERN real-time messaging application using Socket.io, integrating the Google Gemini API for smart reply suggestions, automated drafting, and seamless user authentication.
+                        </p>
+                        <div class="project-tech-list">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>Socket.io</span>
+                            <span>MongoDB</span>
+                            <span>Gemini API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WealthUp -->
+                <div class="project-card" data-skills="react node express mongodb html css tailwind" data-reveal="bottom" data-delay="100">
+                    <div class="project-img-wrapper">
+                        <img src="assets/images/wealthup_preview.png" alt="WealthUp Dashboard Preview" class="project-img">
+                        <div class="project-links-overlay">
+                            <a href="https://weath-up-frontend.vercel.app" target="_blank" class="project-icon-link" aria-label="Live Demo"><i class="fa-solid fa-up-right-from-square"></i></a>
+                            <a href="https://github.com/MDAMANAHMAD" target="_blank" class="project-icon-link" aria-label="Source Code"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-label">Simulated Trading Platform</span>
+                        <h3>WealthUp</h3>
+                        <p class="project-description">
+                            Developed a full-stack MERN trading application using Material UI and Chart.js, featuring secure authentication, real-time simulated stock execution, and dynamic portfolio visualization.
+                        </p>
+                        <div class="project-tech-list">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                            <span>Chart.js</span>
+                            <span>Material UI</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Smart Vision -->
+                <div class="project-card" data-skills="iot javascript" data-reveal="bottom" data-delay="200">
+                    <div class="project-img-wrapper">
+                        <img src="assets/images/smartvision_preview.png" alt="Smart Vision Schematic Preview" class="project-img">
+                        <div class="project-links-overlay">
+                            <a href="https://github.com/MDAMANAHMAD" target="_blank" class="project-icon-link" aria-label="Source Code"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-label">Wearable IoT Device</span>
+                        <h3>Smart Vision</h3>
+                        <p class="project-description">
+                            Engineered an IoT assistive wearable using Embedded C++ (ESP32). Implemented sensor data fusion with ESP32 CAM for obstacle detection and real-time Bluetooth alerts to a custom application.
+                        </p>
+                        <div class="project-tech-list">
+                            <span>Embedded C++</span>
+                            <span>ESP32</span>
+                            <span>ESP32-CAM</span>
+                            <span>Bluetooth</span>
+                            <span>Sensor Fusion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements & Certifications -->
+        <section id="achievements" class="section">
+            <h2 class="section-title"><span class="number">05.</span> Achievements & Certs</h2>
+            
+            <div class="achievements-container">
+                <div class="achievements-column" data-reveal="left">
+                    <h3><i class="fa-solid fa-trophy text-glow-yellow"></i> Academic & Competition Honors</h3>
+                    <div class="ach-list">
+                        <div class="glass-panel ach-item">
+                            <div class="ach-icon"><i class="fa-solid fa-award"></i></div>
+                            <div class="ach-details">
+                                <h4>1st Constellation Prize - Tantragyan 2026</h4>
+                                <p>Awarded for outstanding project execution as part of a winning team effort at LTCE.</p>
+                            </div>
+                        </div>
+                        <div class="glass-panel ach-item">
+                            <div class="ach-icon"><i class="fa-solid fa-award"></i></div>
+                            <div class="ach-details">
+                                <h4>1st Prize - Innovetex 2025</h4>
+                                <p>Won 1st prize in the third-year Innovetex Project Competition at LTCE.</p>
+                            </div>
+                        </div>
+                        <div class="glass-panel ach-item">
+                            <div class="ach-icon"><i class="fa-solid fa-award"></i></div>
+                            <div class="ach-details">
+                                <h4>1st Prize - Physics Poster 2023</h4>
+                                <p>Awarded first prize in the Physics Poster competition in first year at LTCE.</p>
+                            </div>
+                        </div>
+                        <div class="glass-panel ach-item">
+                            <div class="ach-icon"><i class="fa-solid fa-award"></i></div>
+                            <div class="ach-details">
+                                <h4>2nd Prize - Physics Exhibition 2023</h4>
+                                <p>Won second prize for Physics Project demonstration at the college exhibition.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="achievements-column" data-reveal="right">
+                    <h3><i class="fa-solid fa-certificate text-glow-cyan"></i> Professional Certifications</h3>
+                    <div class="cert-list">
+                        <div class="glass-panel cert-item">
+                            <div class="cert-logo"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="cert-info">
+                                <h4>Apna College Web Development Course</h4>
+                                <p>Credential Issued: 2026</p>
+                                <span class="cert-verify"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                            </div>
+                        </div>
+                        <div class="glass-panel cert-item">
+                            <div class="cert-logo"><i class="fa-solid fa-code"></i></div>
+                            <div class="cert-info">
+                                <h4>TalentBattle Java Development</h4>
+                                <p>Credential Issued: 2025</p>
+                                <span class="cert-verify"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="extracurriculars glass-panel">
+                        <h3><i class="fa-solid fa-people-group"></i> Extracurriculars</h3>
+                        <ul class="extra-bullets">
+                            <li>Participated in **Avishkar Project Competition**, showcasing our team's innovative tech project.</li>
+                            <li>Participated and managed **Battery Pack Workshop** organized by RDW Club.</li>
+                            <li>Coordinated and organized the **Innovetex Project Competition** at LTCE.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Terminal Widget -->
+        <section id="terminal-section" class="section">
+            <h2 class="section-title"><span class="number">06.</span> Interactive Terminal</h2>
+            <p class="section-desc">Type commands in the console below to interact directly with my profile databases.</p>
+            
+            <div class="terminal-container" data-reveal="zoom">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="term-btn term-close"></span>
+                        <span class="term-btn term-minimize"></span>
+                        <span class="term-btn term-expand"></span>
+                    </div>
+                    <div class="terminal-title">visitor@aman-ahmad-pc:~</div>
+                </div>
+                <div class="terminal-body" id="terminal-body">
+                    <div class="terminal-output">
+                        <p>Welcome to MD Aman Ahmad's Interactive Portfolio Shell [v1.0.0]</p>
+                        <p>Type <span class="cmd-highlight">help</span> to view available database query commands.</p>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="terminal-input-line">
+                        <span class="terminal-prompt">visitor@aman:~$</span>
+                        <input type="text" id="terminal-input" autocomplete="off" autofocus>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title"><span class="number">07.</span> Contact & Links</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info" data-reveal="left">
+                    <h3>Let's Collaborate</h3>
+                    <p>I am currently seeking full-time development positions or internships. If you have any inquiries, project requests, or just want to connect, feel free to reach out!</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <span class="detail-label">Email</span>
+                                <span class="detail-val" id="email-val">mdamanahmad0406@gmail.com</span>
+                                <button class="copy-btn" data-clipboard="email-val" aria-label="Copy Email"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <span class="detail-label">Phone</span>
+                                <span class="detail-val" id="phone-val">+91 8693081506</span>
+                                <button class="copy-btn" data-clipboard="phone-val" aria-label="Copy Phone"><i class="fa-regular fa-copy"></i></button>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <span class="detail-label">Location</span>
+                                <span class="detail-val">Kalyan, Maharashtra, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container" data-reveal="right">
+                    <form id="contact-form" class="glass-panel contact-form" onsubmit="event.preventDefault();">
+                        <div class="form-group">
+                            <label for="form-name">Name</label>
+                            <input type="text" id="form-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-email">Email</label>
+                            <input type="email" id="form-email" placeholder="johndoe@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Message</label>
+                            <textarea id="form-message" rows="5" placeholder="Let's build something awesome..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span>Send Message</span> <i class="fa-regular fa-paper-plane"></i>
+                        </button>
+                        <div id="form-feedback" class="form-feedback"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Designed & Developed with <i class="fa-solid fa-heart pulse-heart"></i> by MD Aman Ahmad</p>
+        <p class="copyright">&copy; 2026 MD Aman Ahmad. All rights reserved.</p>
+    </footer>
+
+    <!-- Core Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>
