@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
   - Role: Solutions-driven Computer Engineering Graduate.
   - Institution: Lokmanya Tilak College of Engineering (LTCE).
   - Profile: Expertise in building scalable MERN web applications, NoSQL architectures, middleware-driven servers, and real-time Socket.io channels.
-  - CGPI: 7.93.`,
+  - CGPI: 7.93 (71.53%).`,
         
         skills: `TECHNICAL EXPERTISE DATABASE:
   - Languages: Java (Data Structures & Algorithms), JavaScript (ES6+).
