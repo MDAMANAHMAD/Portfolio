@@ -488,17 +488,45 @@ document.addEventListener('DOMContentLoaded', () => {
             formFeedback.className = 'form-feedback';
             formFeedback.textContent = '';
             
-            // Emulate backend processing
-            setTimeout(() => {
+            // Send request to Formspree
+            fetch("https://formspree.io/f/mzdqrkgg", {
+                method: "POST",
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    message: message
+                }),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
                 submitBtn.disabled = false;
                 submitBtn.innerHTML = originalBtnHTML;
                 
-                formFeedback.className = 'form-feedback success animate__animated animate__fadeIn';
-                formFeedback.textContent = `Thanks, ${name}! Your message has been sent successfully.`;
-                
-                // Clear form inputs
-                contactForm.reset();
-            }, 1800);
+                if (response.ok) {
+                    formFeedback.className = 'form-feedback success';
+                    formFeedback.textContent = `Thanks, ${name}! Your message has been sent successfully.`;
+                    contactForm.reset();
+                } else {
+                    response.json().then(data => {
+                        if (Object.hasOwnProperty.call(data, 'errors')) {
+                            formFeedback.textContent = data.errors.map(error => error.message).join(", ");
+                        } else {
+                            formFeedback.textContent = "Oops! There was a problem submitting your form.";
+                        }
+                    });
+                    formFeedback.className = 'form-feedback error';
+                }
+            })
+            .catch(error => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnHTML;
+                formFeedback.className = 'form-feedback error';
+                formFeedback.textContent = "Oops! Connection error. Please try again.";
+                console.error("Formspree submission error:", error);
+            });
         });
     }
 

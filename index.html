@@ -589,18 +589,18 @@
                 </div>
 
                 <div class="contact-form-container" data-reveal="right">
-                    <form id="contact-form" class="glass-panel contact-form" onsubmit="event.preventDefault();">
+                    <form id="contact-form" action="https://formspree.io/f/mzdqrkgg" method="POST" class="glass-panel contact-form">
                         <div class="form-group">
                             <label for="form-name">Name</label>
-                            <input type="text" id="form-name" placeholder="John Doe" required>
+                            <input type="text" id="form-name" name="name" placeholder="John Doe" required>
                         </div>
                         <div class="form-group">
                             <label for="form-email">Email</label>
-                            <input type="email" id="form-email" placeholder="johndoe@example.com" required>
+                            <input type="email" id="form-email" name="email" placeholder="johndoe@example.com" required>
                         </div>
                         <div class="form-group">
                             <label for="form-message">Message</label>
-                            <textarea id="form-message" rows="5" placeholder="Let's build something awesome..." required></textarea>
+                            <textarea id="form-message" name="message" rows="5" placeholder="Let's build something awesome..." required></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">
                             <span>Send Message</span> <i class="fa-regular fa-paper-plane"></i>
