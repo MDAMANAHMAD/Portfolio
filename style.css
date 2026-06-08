@@ -469,12 +469,16 @@ body {
     animation: counterRotate 30s linear infinite;
 }
 
-/* Positions around the ring */
-.tech-icon.nodejs { top: -27px; left: calc(50% - 27px); color: #8cc84b; }
-.tech-icon.react  { top: calc(30% - 27px); right: -27px; color: #61dafb; }
-.tech-icon.mongodb { bottom: calc(20% - 27px); right: 20px; color: #47a248; }
-.tech-icon.java { bottom: -27px; left: calc(50% - 27px); color: #f89820; }
-.tech-icon.git { bottom: calc(20% - 27px); left: 20px; color: #f05032; }
+/* Positions around the ring (8-way symmetrical layout) */
+.tech-icon.nodejs  { top: -27px; left: calc(50% - 27px); color: #8cc84b; }
+.tech-icon.react   { top: 20px; left: 246px; color: #61dafb; }
+.tech-icon.mongodb { top: calc(50% - 27px); left: 293px; color: #47a248; }
+.tech-icon.docker  { top: 246px; left: 246px; color: #2496ed; }
+.tech-icon.java    { top: 293px; left: calc(50% - 27px); color: #f89820; }
+.tech-icon.redis   { top: 246px; left: 20px; color: #d82c20; }
+.tech-icon.git     { top: calc(50% - 27px); left: -27px; color: #f05032; }
+.tech-icon.html    { top: 20px; left: 20px; color: #e34f26; }
+
 
 .scroll-down {
     position: absolute;
