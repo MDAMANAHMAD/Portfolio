@@ -17,6 +17,16 @@ A premium, highly interactive single-page developer portfolio website showcasing
 
 ---
 
+## 📊 Technical Skills Summary
+
+*   **Programming Languages:** Java, JavaScript (ES6+)
+*   **Web Technologies:** HTML5, CSS3, Tailwind CSS
+*   **Backend Stacks:** Node.js, Express.js, Socket.io
+*   **Databases:** MongoDB (Atlas Cloud), MySQL, Redis
+*   **Tools & Workflows:** Docker, Git, GitHub, GCP, Vercel, Render, Netlify, Embedded C++ (ESP32)
+
+---
+
 ## ✨ Features
 
 1.  **🌌 Interactive Canvas Particle Network:**

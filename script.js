@@ -342,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const terminalResponses = {
         help: `Available database querying commands:
-  <span class="cmd-highlight">about</span>      - Prints MD Aman Ahmad's professional brief.
+  <span class="cmd-highlight">about</span>      - Prints Md Aman Ahmad's professional brief.
   <span class="cmd-highlight">skills</span>     - Prints core technical stacks.
   <span class="cmd-highlight">projects</span>   - Shows summary of built applications.
   <span class="cmd-highlight">experience</span> - Displays internship and leadership roles.
@@ -359,9 +359,9 @@ document.addEventListener('DOMContentLoaded', () => {
         skills: `TECHNICAL EXPERTISE DATABASE:
   - Languages: Java (Data Structures & Algorithms), JavaScript (ES6+).
   - Frontend: HTML5, CSS3, Tailwind CSS, React, Material UI.
-  - Backend: Node.js, Express.js.
-  - Databases: MongoDB (Atlas Cloud management), MySQL.
-  - Tooling: Git, GitHub, Vercel, Render, Netlify, Embedded C++, ESP32.`,
+  - Backend: Node.js, Express.js, Socket.io.
+  - Databases: MongoDB (Atlas Cloud), MySQL, Redis.
+  - Tooling: Docker, Git, GitHub, GCP, Vercel, Render, Netlify, ESP32.`,
         
         projects: `PROJECT REGISTRY:
   1. CHATPILOT (AI Chat Application)
