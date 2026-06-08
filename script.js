@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
   <span class="cmd-highlight">clear</span>      - Wipes the console screen buffer.
   <span class="cmd-highlight">secret</span>     - Access an easter egg.`,
         
-        about: `MD AMAN AHMAD:
+        about: `Md Aman Ahmad:
   - Role: Solutions-driven Computer Engineering Graduate.
   - Institution: Lokmanya Tilak College of Engineering (LTCE).
   - Profile: Expertise in building scalable MERN web applications, NoSQL architectures, middleware-driven servers, and real-time Socket.io channels.
