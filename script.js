@@ -541,4 +541,221 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // ==========================================
+    // 11. PROOF UPLOAD & VIEWING SYSTEM
+    // ==========================================
+    const uploadModal = document.getElementById('upload-modal');
+    const viewerModal = document.getElementById('viewer-modal');
+    const closeUploadModal = document.getElementById('close-upload-modal');
+    const closeViewerModal = document.getElementById('close-viewer-modal');
+    
+    const pinSection = document.getElementById('pin-section');
+    const fileSection = document.getElementById('file-section');
+    const securityPinInput = document.getElementById('security-pin');
+    const submitPinBtn = document.getElementById('submit-pin-btn');
+    const pinError = document.getElementById('pin-error');
+    
+    const proofFileInput = document.getElementById('proof-file-input');
+    const saveProofBtn = document.getElementById('save-proof-btn');
+    
+    const viewerFrameContainer = document.getElementById('viewer-frame-container');
+    const viewerModalTitle = document.getElementById('viewer-modal-title');
+    const uploadModalTitle = document.getElementById('upload-modal-title');
+    
+    let activeWidgetId = null;
+    let activeAction = null; // 'upload' or 'delete'
+
+    // Render proof buttons dynamically
+    function renderProofWidgets() {
+        const widgets = document.querySelectorAll('.proof-widget');
+        widgets.forEach(widget => {
+            const id = widget.getAttribute('data-id');
+            const label = widget.getAttribute('data-label');
+            const storedFile = localStorage.getItem('proof_' + id);
+            
+            widget.innerHTML = ''; // clear
+            
+            if (storedFile) {
+                // View button
+                const viewBtn = document.createElement('button');
+                viewBtn.className = 'btn-proof btn-proof-view';
+                viewBtn.innerHTML = '<i class="fa-solid fa-file-contract"></i> View Proof';
+                viewBtn.addEventListener('click', () => openViewer(id, label));
+                widget.appendChild(viewBtn);
+                
+                // Update button
+                const updateBtn = document.createElement('button');
+                updateBtn.className = 'btn-proof';
+                updateBtn.innerHTML = '<i class="fa-solid fa-lock-open"></i> Update';
+                updateBtn.addEventListener('click', () => openUploadPrompt(id, label, 'upload'));
+                widget.appendChild(updateBtn);
+                
+                // Delete button
+                const deleteBtn = document.createElement('button');
+                deleteBtn.className = 'btn-proof';
+                deleteBtn.style.color = '#f87171';
+                deleteBtn.style.borderColor = 'rgba(248, 113, 113, 0.2)';
+                deleteBtn.innerHTML = '<i class="fa-solid fa-trash-can"></i>';
+                deleteBtn.addEventListener('click', () => openUploadPrompt(id, label, 'delete'));
+                widget.appendChild(deleteBtn);
+            } else {
+                // Initial upload button
+                const uploadBtn = document.createElement('button');
+                uploadBtn.className = 'btn-proof';
+                uploadBtn.innerHTML = '<i class="fa-solid fa-lock"></i> Upload Proof';
+                uploadBtn.addEventListener('click', () => openUploadPrompt(id, label, 'upload'));
+                widget.appendChild(uploadBtn);
+            }
+        });
+    }
+
+    // Modal Control Utils
+    function showModal(modal) {
+        modal.style.display = 'flex';
+        setTimeout(() => modal.classList.add('active'), 10);
+    }
+    
+    function hideModal(modal) {
+        modal.classList.remove('active');
+        setTimeout(() => modal.style.display = 'none', 300);
+    }
+
+    // Open Upload / Security Check Modal
+    function openUploadPrompt(id, label, action) {
+        activeWidgetId = id;
+        activeAction = action;
+        
+        securityPinInput.value = '';
+        pinError.textContent = '';
+        
+        if (action === 'delete') {
+            uploadModalTitle.textContent = 'Verify PIN to Delete';
+        } else {
+            uploadModalTitle.textContent = `Upload: ${label}`;
+        }
+        
+        pinSection.style.display = 'block';
+        fileSection.style.display = 'none';
+        proofFileInput.value = '';
+        
+        showModal(uploadModal);
+        securityPinInput.focus();
+    }
+
+    // PIN Verification
+    function verifyPIN() {
+        const pin = securityPinInput.value.trim();
+        if (pin === '2004') {
+            pinError.textContent = '';
+            
+            if (activeAction === 'delete') {
+                // Delete directly
+                localStorage.removeItem('proof_' + activeWidgetId);
+                localStorage.removeItem('proof_name_' + activeWidgetId);
+                hideModal(uploadModal);
+                renderProofWidgets();
+            } else {
+                // Transition to file upload
+                pinSection.style.display = 'none';
+                fileSection.style.display = 'block';
+            }
+        } else {
+            pinError.className = 'form-feedback error';
+            pinError.textContent = 'Invalid PIN. Access denied.';
+        }
+    }
+
+    submitPinBtn.addEventListener('click', verifyPIN);
+    securityPinInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') verifyPIN();
+    });
+
+    // Save File to localStorage
+    saveProofBtn.addEventListener('click', () => {
+        const file = proofFileInput.files[0];
+        if (!file) {
+            alert('Please select a file first.');
+            return;
+        }
+
+        if (file.size > 1.5 * 1024 * 1024) {
+            alert('File size exceeds the 1.5MB limit for browser storage. Please choose a smaller PDF or image.');
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const dataUrl = e.target.result;
+            try {
+                localStorage.setItem('proof_' + activeWidgetId, dataUrl);
+                localStorage.setItem('proof_name_' + activeWidgetId, file.name);
+                hideModal(uploadModal);
+                renderProofWidgets();
+            } catch (error) {
+                console.error(error);
+                alert('Storage quota exceeded. Please try uploading a smaller file.');
+            }
+        };
+        reader.readAsDataURL(file);
+    });
+
+    // Convert Base64 back to Blob URL for iframe viewing
+    function base64ToBlobUrl(base64Data) {
+        try {
+            const parts = base64Data.split(';base64,');
+            const contentType = parts[0].split(':')[1];
+            const raw = window.atob(parts[1]);
+            const rawLength = raw.length;
+            const uInt8Array = new Uint8Array(rawLength);
+            for (let i = 0; i < rawLength; ++i) {
+                uInt8Array[i] = raw.charCodeAt(i);
+            }
+            const blob = new Blob([uInt8Array], { type: contentType });
+            return URL.createObjectURL(blob);
+        } catch(e) {
+            console.error('Blob conversion failed, fallback to raw data url:', e);
+            return base64Data;
+        }
+    }
+
+    // View Document
+    function openViewer(id, label) {
+        const dataUrl = localStorage.getItem('proof_' + id);
+        if (!dataUrl) return;
+        
+        viewerModalTitle.textContent = label;
+        viewerFrameContainer.innerHTML = ''; // Clear
+        
+        const blobUrl = base64ToBlobUrl(dataUrl);
+        
+        if (dataUrl.startsWith('data:application/pdf')) {
+            // Render PDF in Iframe
+            const iframe = document.createElement('iframe');
+            iframe.src = blobUrl;
+            viewerFrameContainer.appendChild(iframe);
+        } else {
+            // Render Image
+            const img = document.createElement('img');
+            img.src = blobUrl;
+            img.alt = label;
+            viewerFrameContainer.appendChild(img);
+        }
+        
+        showModal(viewerModal);
+    }
+
+    // Close Modals
+    closeUploadModal.addEventListener('click', () => hideModal(uploadModal));
+    closeViewerModal.addEventListener('click', () => hideModal(viewerModal));
+    
+    // Close modal on outside click
+    window.addEventListener('click', (e) => {
+        if (e.target === uploadModal) hideModal(uploadModal);
+        if (e.target === viewerModal) hideModal(viewerModal);
+    });
+
+    // Initialize widgets on load
+    renderProofWidgets();
 });
+

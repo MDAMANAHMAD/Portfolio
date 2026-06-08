@@ -327,6 +327,7 @@
                             <li>Developed the "Externship" mobile application utilizing Flutter for frontend interfaces and Node.js/Express.js for backend services.</li>
                             <li>Implemented a highly scalable MongoDB architecture to facilitate efficient data storage and seamless client-server synchronization.</li>
                         </ul>
+                        <div class="proof-widget" data-id="intern-hari-om" data-label="Hari Om Thalassic Internship Proof"></div>
                     </div>
                 </div>
                 
@@ -358,6 +359,7 @@
                             <li>Gained hands-on experience in Google Cloud Console including Google APIs (GPS), and managing cloud databases via MongoDB Atlas.</li>
                             <li>Mastered the deployment, hosting, and pipeline setup of full-stack MERN applications on Vercel, Render, and Netlify.</li>
                         </ul>
+                        <div class="proof-widget" data-id="intern-ifuture" data-label="iFuture Technologies Internship Proof"></div>
                     </div>
                 </div>
             </div>
@@ -457,6 +459,7 @@
                             <div class="ach-details">
                                 <h4>1st Constellation Prize - Tantragyan 2026</h4>
                                 <p>Awarded for outstanding project execution as part of a winning team effort at LTCE.</p>
+                                <div class="proof-widget" data-id="ach-tantragyan" data-label="Tantragyan 2026 Award Proof"></div>
                             </div>
                         </div>
                         <div class="glass-panel ach-item">
@@ -464,6 +467,7 @@
                             <div class="ach-details">
                                 <h4>1st Prize - Innovetex 2025</h4>
                                 <p>Won 1st prize in the third-year Innovetex Project Competition at LTCE.</p>
+                                <div class="proof-widget" data-id="ach-innovetex" data-label="Innovetex 2025 Award Proof"></div>
                             </div>
                         </div>
                         <div class="glass-panel ach-item">
@@ -471,6 +475,7 @@
                             <div class="ach-details">
                                 <h4>1st Prize - Physics Poster 2023</h4>
                                 <p>Awarded first prize in the Physics Poster competition in first year at LTCE.</p>
+                                <div class="proof-widget" data-id="ach-physics-poster" data-label="Physics Poster 2023 Proof"></div>
                             </div>
                         </div>
                         <div class="glass-panel ach-item">
@@ -478,6 +483,7 @@
                             <div class="ach-details">
                                 <h4>2nd Prize - Physics Exhibition 2023</h4>
                                 <p>Won second prize for Physics Project demonstration at the college exhibition.</p>
+                                <div class="proof-widget" data-id="ach-physics-exhibition" data-label="Physics Exhibition 2023 Proof"></div>
                             </div>
                         </div>
                     </div>
@@ -492,6 +498,7 @@
                                 <h4>Apna College Web Development Course</h4>
                                 <p>Credential Issued: 2026</p>
                                 <span class="cert-verify"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                                <div class="proof-widget" data-id="cert-apna-college" data-label="Apna College Web Development Certificate"></div>
                             </div>
                         </div>
                         <div class="glass-panel cert-item">
@@ -500,6 +507,7 @@
                                 <h4>TalentBattle Java Development</h4>
                                 <p>Credential Issued: 2025</p>
                                 <span class="cert-verify"><i class="fa-solid fa-circle-check"></i> Verified</span>
+                                <div class="proof-widget" data-id="cert-talentbattle" data-label="TalentBattle Java Certificate"></div>
                             </div>
                         </div>
                     </div>
@@ -609,6 +617,41 @@
         <p>Designed & Developed with <i class="fa-solid fa-heart pulse-heart"></i> by MD Aman Ahmad</p>
         <p class="copyright">&copy; 2026 MD Aman Ahmad. All rights reserved.</p>
     </footer>
+
+    <!-- Modals for Proof Document Upload & Viewer -->
+    <div id="upload-modal" class="modal-overlay">
+        <div class="glass-panel modal-content">
+            <button class="modal-close-btn" id="close-upload-modal">&times;</button>
+            <h3 id="upload-modal-title">Upload Proof Document</h3>
+            
+            <div id="pin-section">
+                <p class="modal-desc">Security verification required. Enter administrative PIN to proceed.</p>
+                <div class="form-group">
+                    <input type="password" id="security-pin" placeholder="Enter PIN (e.g. 2004)">
+                </div>
+                <button class="btn btn-primary btn-block" id="submit-pin-btn">Verify PIN</button>
+                <p id="pin-error" class="form-feedback error" style="margin-top: 10px;"></p>
+            </div>
+            
+            <div id="file-section" style="display: none;">
+                <p class="modal-desc">Select a PDF or image file (Max size: 1.5MB for persistence).</p>
+                <div class="form-group">
+                    <input type="file" id="proof-file-input" accept="application/pdf,image/*">
+                </div>
+                <button class="btn btn-primary btn-block" id="save-proof-btn">Save Proof</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="viewer-modal" class="modal-overlay">
+        <div class="glass-panel modal-content viewer-content">
+            <button class="modal-close-btn" id="close-viewer-modal">&times;</button>
+            <h3 id="viewer-modal-title" style="margin-bottom: 20px;">Document Proof</h3>
+            <div id="viewer-frame-container">
+                <!-- Content injected dynamically -->
+            </div>
+        </div>
+    </div>
 
     <!-- Core Javascript -->
     <script src="script.js"></script>
