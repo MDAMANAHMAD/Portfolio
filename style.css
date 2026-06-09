@@ -1355,10 +1355,12 @@ body {
     .hero-visual {
         margin-top: 20px;
         height: 280px;
-        overflow: hidden;
     }
     .tech-ring {
         transform: scale(0.75);
+    }
+    .scroll-down {
+        display: none;
     }
     
     /* Timeline Mobile Layout */
